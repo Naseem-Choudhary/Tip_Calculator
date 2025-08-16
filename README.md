@@ -1,14 +1,14 @@
 # 💸 TipCalculator  
 
 [![License](https://img.shields.io/github/license/Naseem-Choudhary/TipCalculator?color=blue)](./LICENSE)  
-[![GitHub stars](https://img.shields.io/github/stars/your-username/TipCalculator?style=social)](https://github.com/Naseem-Choudhary/TipCalculator/stargazers)  
-[![GitHub forks](https://img.shields.io/github/forks/your-username/TipCalculator?style=social)](https://github.com/Naseem-Choudhary/TipCalculator/network/members)  
-[![Last Commit](https://img.shields.io/github/last-commit/your-username/TipCalculator)](https://github.com/Naseem-Choudhary/TipCalculator/commits/main)  
+[![GitHub stars](https://img.shields.io/github/stars/Naseem-Choudhary/TipCalculator?style=social)](https://github.com/Naseem-Choudhary/TipCalculator/stargazers)  
+[![GitHub forks](https://img.shields.io/github/forks/Naseem-Choudhary/TipCalculator?style=social)](https://github.com/Naseem-Choudhary/TipCalculator/network/members)  
+[![Last Commit](https://img.shields.io/github/last-commit/Naseem-Choudhary/TipCalculator)](https://github.com/Naseem-Choudhary/TipCalculator/commits/main)  
 
 An elegant and simple **bill & tip splitting app** built with HTML, CSS, and JavaScript.  
 Easily calculate tips, split bills among friends, and get quick insights into your expenses.  
-<img width="1350" height="604" alt="image" src="https://github.com/user-attachments/assets/8ea02574-6a28-4db2-8340-7e83a8cdf547" />
 
+![Demo Screenshot](./assets/demo.png) <!-- replace with your screenshot -->
 
 ---
 
@@ -25,52 +25,63 @@ Easily calculate tips, split bills among friends, and get quick insights into yo
 
 1. Clone the repo:  
 ```bash
-git clone https://github.com/Naseem-Choudhary/TipCalculator.git```
-Open the project folder:
+git clone https://github.com/Naseem-Choudhary/TipCalculator.git
+````
 
-```cd TipCalculator```
-Run the app by simply opening index.html in your browser.
+2. Open the project folder:
 
-▶️ Usage
-Enter the bill amount.
+```bash
+cd TipCalculator
+```
 
-Choose or input your desired tip percentage.
+3. Run the app by simply opening **index.html** in your browser.
 
-Select the number of people to split the bill.
+---
 
-Instantly see:
+## ▶️ Usage
 
-Tip per person
+1. Enter the bill amount.
+2. Choose or input your desired tip percentage.
+3. Select the number of people to split the bill.
+4. Instantly see:
 
-Total per person
+   * Tip per person
+   * Total per person
 
 Example:
-<!-- replace with demo gif -->
+![Demo GIF](./assets/demo.gif) <!-- replace with demo gif -->
 
-🛠️ Tech Stack
-HTML5 – structure
+---
 
-CSS3 – styling (with dark/light theme)
+## 🛠️ Tech Stack
 
-JavaScript (Vanilla) – calculations & interactions
+* **HTML5** – structure
+* **CSS3** – styling (with dark/light theme)
+* **JavaScript (Vanilla)** – calculations & interactions
 
-🤝 Contributing
+---
+
+## 🤝 Contributing
+
 Contributions are welcome! 🎉
 
-Fork the repository
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m "Add new feature"`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
 
-Create a feature branch (git checkout -b feature/new-feature)
+---
 
-Commit your changes (git commit -m "Add new feature")
+## 📜 License
 
-Push to the branch (git push origin feature/new-feature)
+This project is licensed under the **MIT License** – see the [LICENSE](./LICENSE) file for details.
 
-Open a Pull Request
+---
 
-📜 License
-This project is licensed under the MIT License – see the LICENSE file for details.
+## 📬 Contact
 
-📬 Contact
-GitHub: Naseem-Choudhary
+* GitHub: [@Naseem-Choudhary](https://github.com/Naseem-Choudhary)
+* LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
 
-LinkedIn: 
+---
