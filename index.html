@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Bill Splitter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="bill-splitter-container">
+        <section class="content-section">
+            <header>
+                <div class="header-content">
+                    <h1>Bill Splitter</h1>
+                </div>
+                <!-- Theme Switcher Button -->
+                <div class="theme-switcher-container">
+                    <svg id="theme-toggle-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </div>
+            </header>
+
+            <!-- Merged Calculation Card -->
+            <div class="card calculation-card">
+                <!-- Bill Amount -->
+                <div class="card-section">
+                    <label for="bill-amount" class="card-label">Bill Amount</label>
+                    <div class="input-group">
+                        <div class="currency-selector">
+                            <span id="currency-symbol-input">₹</span>
+                            <select id="currency-dropdown" aria-label="Select Currency">
+                                <option value="₹" selected>INR (₹)</option>
+                                <option value="$">USD ($)</option>
+                                <option value="€">EUR (€)</option>
+                            </select>
+                        </div>
+                        <input type="number" id="bill-amount" placeholder="e.g., 6000" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <div class="card-divider"></div>
+
+                <!-- Tip Selection -->
+                <div class="card-section">
+                    <label class="card-label">Select Tip %</label>
+                    <div class="chip-group" id="tip-chips">
+                        <button class="chip" data-value="0.05">5%</button>
+                        <button class="chip active" data-value="0.10">10%</button>
+                        <button class="chip" data-value="0.15">15%</button>
+                        <button class="chip" data-value="0.20">20%</button>
+                        <button class="chip" data-value="custom">Custom</button>
+                    </div>
+                    <div class="custom-input-container" id="custom-tip-container">
+                        <div class="slider-group">
+                            <input type="range" id="custom-tip-slider" min="0" max="100" step="1">
+                            <span id="custom-tip-label">25%</span>
+                        </div>
+                        <input type="number" id="custom-tip-input" min="0" max="100" class="custom-value-input">
+                    </div>
+                </div>
+
+                <div class="card-divider"></div>
+
+                <!-- Tax Selection -->
+                <div class="card-section">
+                    <label class="card-label">Select Tax %</label>
+                    <div class="chip-group" id="tax-chips">
+                        <button class="chip active" data-value="0">0%</button>
+                        <button class="chip" data-value="0.05">5%</button>
+                        <button class="chip" data-value="0.12">12%</button>
+                        <button class="chip" data-value="0.18">18%</button>
+                        <button class="chip" data-value="custom">Custom</button>
+                    </div>
+                    <div class="custom-input-container" id="custom-tax-container">
+                        <div class="slider-group">
+                            <input type="range" id="custom-tax-slider" min="0" max="100" step="1">
+                            <span id="custom-tax-label">10%</span>
+                        </div>
+                        <input type="number" id="custom-tax-input" min="0" max="100" class="custom-value-input">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Merged Summary & Results Section -->
+        <section class="summary-section">
+            <div class="card summary-card">
+                <!-- Optional Split Toggle -->
+                <div class="card-section split-toggle-section">
+                    <label for="split-bill-switch" class="card-label">Split Bill?</label>
+                    <label class="switch">
+                        <input type="checkbox" id="split-bill-switch">
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+
+                <!-- People Splitter (conditionally shown) -->
+                <div class="card-section" id="split-section">
+                    <label for="people-count" class="card-label">Split Between</label>
+                    <div class="stepper">
+                        <button id="decrement-people" aria-label="Decrease number of people">-</button>
+                        <span id="people-count">1 Person</span>
+                        <button id="increment-people" aria-label="Increase number of people">+</button>
+                    </div>
+                </div>
+                
+                <div class="card-divider"></div>
+
+                <!-- Results -->
+                <div class="card-section">
+                    <div class="results-header">
+                        <h2 class="card-label">Breakdown</h2>
+                        <div class="rounding-toggle">
+                            <span>Exact</span>
+                            <label class="switch">
+                                <input type="checkbox" id="rounding-switch">
+                                <span class="switch-slider"></span>
+                            </label>
+                            <span>Rounded</span>
+                        </div>
+                    </div>
+
+                    <div class="breakdown-list">
+                        <div class="breakdown-item">
+                            <span>Bill Amount</span>
+                            <span id="result-bill-amount">₹0.00</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Tip Amount</span>
+                            <span id="result-tip-amount">₹0.00</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Tax Amount</span>
+                            <span id="result-tax-amount">₹0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="total-section">
+                        <div class="total-item">
+                            <span class="total-label">Total Amount</span>
+                            <span class="total-value" id="result-total-amount">₹0.00</span>
+                        </div>
+                        <div class="total-item per-person" id="per-person-display">
+                            <span class="total-label">Per Person</span>
+                            <span class="total-value" id="result-per-person">₹0.00</span>
+                        </div>
+                    </div>
+
+                    <button id="share-button" class="share-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                        <span>Share Result</span>
+                    </button>
+                    <div id="share-feedback" class="share-feedback">Copied to clipboard!</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
