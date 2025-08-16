@@ -8,7 +8,8 @@
 An elegant and simple **bill & tip splitting app** built with HTML, CSS, and JavaScript.  
 Easily calculate tips, split bills among friends, and get quick insights into your expenses.  
 
-![Demo Screenshot](./assets/demo.png) <!-- replace with your screenshot -->
+<img width="1298" height="623" alt="image" src="https://github.com/user-attachments/assets/f0bc3e09-c131-46e8-b3d5-7ba9a28c9314" />
+
 
 ---
 
